@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+:root {
+  --light: #eeeeee;
+  --dark: #222831;
+  --primary: #393e46;
+
+  --red: #ff2e63;
+
+  --montserrat: "Montserrat", sans-serif;
+}
+
+@theme {
+  --color-light: var(--light);
+  --color-dark: var(--dark);
+  --color-primary: var(--primary);
+  --color-red: var(--red);
+
+  --font-montserrat: var(--montserrat);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--montserrat);
+
+  /* Sembunyikan scrollbar untuk Chrome, Safari, dan Opera */
+  -ms-overflow-style: none; /* IE dan Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+body::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+  width: 0px;
+}
+
+h1 {
+  color: var(--dark);
+}
+
+p {
+  color: var(--dark);
+  opacity: 0.7;
+}
+
+.section {
+  background-color: var(--light);
+}
