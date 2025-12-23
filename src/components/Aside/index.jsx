@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { HashLink } from "react-router-hash-link";
 import nav_list from "../../assets/aside_list";
 
-export default function Aside() {
+export default function Aside({ isAsideActive }) {
   const [activeSection, setActiveSection] = useState("hero");
 
   useEffect(() => {
@@ -35,7 +35,11 @@ export default function Aside() {
   }, []);
 
   return (
-    <aside className="fixed left-0 top-1/2 z-50 -translate-y-1/2 w-20 h-100 flex flex-col justify-center items-center gap-15 bg-primary rounded-tr-3xl rounded-br-3xl py-8">
+    <aside
+      className={`fixed left-0 ${
+        isAsideActive ? "translate-x-0" : "-translate-x-100 lg:translate-x-0"
+      } top-1/2 z-50 -translate-y-1/2 w-20 h-100 flex flex-col justify-center items-center gap-15 bg-primary rounded-tr-3xl rounded-br-3xl py-8 transition-all duration-300`}
+    >
       {nav_list.map((nav, index) => {
         const sectionId = nav.link.replace("#", "");
         const isActive = activeSection === sectionId;

@@ -13,7 +13,7 @@ const nav_list = [
     icon: <IoPersonSharp />,
   },
   {
-    link: "#projects",
+    link: "#project",
     icon: <GiOpenFolder />,
   },
   {
